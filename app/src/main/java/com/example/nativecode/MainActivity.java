@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -16,11 +17,18 @@ import android.widget.Toast;
 import com.basgeekball.awesomevalidation.AwesomeValidation;
 import com.basgeekball.awesomevalidation.ValidationStyle;
 import com.basgeekball.awesomevalidation.utility.RegexTemplate;
+import com.google.android.material.textfield.TextInputLayout;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     EditText metName, metMobile, metEmail, metCountry, metPrice,metNotes, metPropertyName;
     Button mbtSubmit;
-    Spinner mySpinner;
+    TextInputLayout til_property_type;
+    AutoCompleteTextView act_property_type;
+
+    ArrayList<String> arrayList_propertyType;
+    ArrayAdapter<String> arrayAdapter_propertyType;
 
     AwesomeValidation awesomeValidation;
 
@@ -29,7 +37,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mySpinner = findViewById(R.id.spinner1);
+        til_property_type = (TextInputLayout)findViewById(R.id.til_property_type);
+        act_property_type = (AutoCompleteTextView)findViewById(R.id.act_property_type);
+
+        arrayList_propertyType = new ArrayList<>();
+        arrayList_propertyType.add("Flat");
+        arrayList_propertyType.add("House");
+        arrayList_propertyType.add("Bungalow");
+
+        arrayAdapter_propertyType = new ArrayAdapter<>(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, arrayList_propertyType);
+        act_property_type.setAdapter(arrayAdapter_propertyType);
+
+        act_property_type.setThreshold(1);
+
         metName = findViewById(R.id.et_name);
         metMobile = findViewById(R.id.et_mobile);
         metEmail = findViewById(R.id.et_email);
@@ -47,10 +67,7 @@ public class MainActivity extends AppCompatActivity {
         awesomeValidation.addValidation(MainActivity.this, R.id.et_price, RegexTemplate.NOT_EMPTY, R.string.invalid_price);
         awesomeValidation.addValidation(MainActivity.this, R.id.et_propertyName, RegexTemplate.NOT_EMPTY, R.string.invalid_propertyName);
 
-        ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(MainActivity.this, android.R.layout.simple_list_item_1,
-                getResources().getStringArray(R.array.names));
-        myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        mySpinner.setAdapter(myAdapter);
+
 
         mbtSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,7 +75,6 @@ public class MainActivity extends AppCompatActivity {
                 ActionBar actionBar = getSupportActionBar();
                 actionBar.setTitle("First Activity");
 
-                final Spinner mySpinner = findViewById(R.id.spinner1);
                 final EditText metName = findViewById(R.id.et_name);
                 final EditText metMobile = findViewById(R.id.et_mobile);
                 final EditText metEmail = findViewById(R.id.et_email);
@@ -80,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
                     String propertyName = metPropertyName.getText().toString();
 
                     Intent intent = new Intent(MainActivity.this, SecondActivity.class);
-                    intent.putExtra("Full Name", name); // Ở đây name là từ khóa
+                    intent.putExtra("Full Name", name);
                     intent.putExtra("Mobile", mobile);
                     intent.putExtra("Email", email);
                     intent.putExtra("Country", country);

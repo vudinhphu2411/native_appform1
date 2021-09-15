@@ -10,12 +10,24 @@
     android:background="@color/teal_200"
     tools:context=".MainActivity">
 
-    <Spinner
-        android:id="@+id/spinner1"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_property_type"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"/>
+        android:layout_marginTop="20dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"/>
+
+        <AutoCompleteTextView
+            android:id="@+id/act_property_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:hint="Property Type"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:padding="20dp"/>
+
 
     <EditText
         android:layout_width="match_parent"

@@ -6,9 +6,4 @@
     <string name="invalid_country">Please input your country</string>
     <string name="invalid_price">Please input your price</string>
     <string name="invalid_propertyName">Please input your Property\'s Name</string>
-    <string-array name="names">
-        <item>Flat</item>
-        <item>House</item>
-        <item>Bungalow</item>
-    </string-array>
 </resources>
