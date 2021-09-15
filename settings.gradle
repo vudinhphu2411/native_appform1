@@ -1,0 +1,2 @@
+rootProject.name = "nativecode"
+include ':app'

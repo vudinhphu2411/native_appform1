@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Rentalz</string>
+    <string name="invalid_name">Please input your full name</string>
+    <string name="invalid_mobile">Please input your mobile number</string>
+    <string name="invalid_email">Please input invalid email</string>
+    <string name="invalid_country">Please input your country</string>
+    <string name="invalid_price">Please input your price</string>
+    <string name="invalid_propertyName">Please input your Property\'s Name</string>
+    <string-array name="names">
+        <item>Flat</item>
+        <item>House</item>
+        <item>Bungalow</item>
+    </string-array>
+</resources>

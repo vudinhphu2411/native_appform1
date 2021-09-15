@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="@color/teal_200"
+    tools:context=".MainActivity">
+
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/et_name"
+        android:hint="Full Name"
+        android:padding="10dp"
+        android:inputType="textPersonName"
+        android:background="@android:color/white"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/et_mobile"
+        android:hint="Mobile Number"
+        android:padding="10dp"
+        android:inputType="phone"
+        android:maxLength="10"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/white"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/et_email"
+        android:hint="Email Address"
+        android:padding="10dp"
+        android:inputType="textEmailAddress"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/white"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/et_price"
+        android:hint="Monthly Rent Price"
+        android:padding="10dp"
+        android:inputType="number"
+        android:maxLength="10"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/white"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/et_country"
+        android:hint="Country"
+        android:padding="10dp"
+        android:inputType="text"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/white"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/et_notes"
+        android:hint="Notes"
+        android:padding="10dp"
+        android:inputType="text"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/white"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/et_propertyName"
+        android:hint="Name of Property"
+        android:padding="10dp"
+        android:inputType="textPersonName"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/white"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/bt_submit"
+        android:text="submit"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:background="@android:color/white"/>
+</LinearLayout>
